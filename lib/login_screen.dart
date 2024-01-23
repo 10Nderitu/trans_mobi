@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:transmobi/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -19,7 +17,7 @@ class LoginScreen extends StatelessWidget {
               padding: EdgeInsets.all(8),
               child: Image(image: AssetImage("assets/logo.png")),
             ),
-            // Adds email textfield
+            // Adds email textField
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
@@ -59,7 +57,7 @@ class LoginScreen extends StatelessWidget {
             InkWell(
               child: const Text.rich(
                 TextSpan(
-                  text: 'Don\'t have an account?',
+                  text: "Don't have an account?",
                   children: [
                     TextSpan(text: "Sign Up", style: TextStyle(
                       color: Colors.blue,

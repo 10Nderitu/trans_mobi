@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:transmobi/login_screen.dart';
 import 'package:transmobi/signup_screen.dart';
+import 'package:transmobi/locations.dart';
+import 'package:transmobi/welcome.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Transmobi',
-      home: LoginScreen(),
+      home: Welcome(),
     );
   }
 }
