@@ -13,7 +13,7 @@ class Welcome extends StatelessWidget {
             Image(image: AssetImage("assets/logo.png")),
             Text(style: TextStyle(
               fontSize: 22,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w700,
             ),
                 'WELCOME TO PRESTIGE COACH'
             ),
