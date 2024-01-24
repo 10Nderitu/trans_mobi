@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Transmobi',
-      home: Welcome(),
+      home: Locations(),
     );
   }
 }

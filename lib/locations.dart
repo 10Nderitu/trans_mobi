@@ -12,6 +12,10 @@ class _LocationsState extends State<Locations> {
 
   int _currentIndex = 0;
 
+  String _dropdownValue = '1';
+
+  final _items = ['Nairobi', 'Voi','Mombasa'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +24,69 @@ class _LocationsState extends State<Locations> {
           title: const Text ('DESTINATION'),
           centerTitle: true,
         ),
-        body: Container(),
+
+        body: Column(
+          children: [
+            const Image(
+                width: 500,
+                height: 500,
+                image: AssetImage("assets/logo.png")),
+
+            Row(
+              children: <Widget>[
+                const Text(style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w400,
+                ),
+                    'From'
+                ),
+
+                DropdownButton(
+                items: _items.map((String item){
+                return DropdownMenuItem(
+                value: item,
+                    child: Text(item)
+                    );
+                    }).toList(),
+                  onChanged: (String? newValue){
+                  setState(() {
+                    _dropdownValue = newValue!;
+                  });
+                  },
+                ),
+
+                const SizedBox(width: 100),
+
+                const Text(style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w400,
+                ),
+                    'To'
+                ),
+
+                DropdownButton(
+                  items: _items.map((String item){
+                    return DropdownMenuItem(
+                        value: item,
+                        child: Text(item)
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue){
+                    setState(() {
+                      _dropdownValue = newValue!;
+                    });
+                  },
+                ),
+              ],
+            ),
+          ],
+        ),
+        floatingActionButton: const FloatingActionButton(
+          onPressed: null,
+          shape: CircleBorder(),
+          backgroundColor: Colors.blue,
+          child: Text('Next'),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.blue,
           currentIndex: _currentIndex,
@@ -39,7 +105,7 @@ class _LocationsState extends State<Locations> {
               _currentIndex = index;
             });
           }
-        )
+        ),
     );
   }
 }
